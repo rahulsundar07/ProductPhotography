@@ -1,0 +1,21 @@
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://api.flowscale.ai/api/v1/:path*" }
+  ],
+  "headers": [
+    {
+      "source": "/api/:path*",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "X-Requested-With, Content-Type, Accept, Authorization, X-API-Key" },
+        { "key": "Access-Control-Allow-Credentials", "value": "true" }
+      ]
+    }
+  ],
+  "env": {
+    "VITE_API_BASE_URL": "https://api.flowscale.ai",
+    "VITE_API_KEY": "@flowscale-api-key",
+    "VITE_WORKFLOW_ID": "@workflow-id"
+  }
+}
