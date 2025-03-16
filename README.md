@@ -21,8 +21,8 @@ A React application for generating creative backgrounds for product images using
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/image-craft.git
-   cd image-craft
+   git clone https://github.com/rahulsundar07/ProductPhotography.git
+   cd ProductPhotography
    ```
 2. Install dependencies
 ``
