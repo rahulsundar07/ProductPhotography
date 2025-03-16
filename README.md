@@ -1,4 +1,4 @@
-# Image-Craft
+# ProductPhotography
 
 A React application for generating creative backgrounds for product images using AI.
 
