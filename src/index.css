@@ -1,0 +1,170 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 224 76% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: 
+      radial-gradient(circle at top right, rgba(59, 130, 246, 0.08) 0%, transparent 70%),
+      radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.05) 0%, transparent 70%),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(244, 247, 254, 0.8));
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .upload-zone {
+    @apply relative border-2 border-dashed rounded-2xl transition-all duration-300 ease-in-out bg-white/70 backdrop-blur-sm border-primary/20 hover:border-primary/50 cursor-pointer;
+  }
+
+  .upload-zone.active {
+    @apply border-primary bg-primary/5;
+  }
+  
+  .image-container {
+    @apply relative overflow-hidden rounded-2xl bg-white/70 transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium transition-all shadow-md hover:shadow-lg hover:scale-[1.03] active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 rounded-full bg-secondary/80 text-secondary-foreground font-medium transition-all hover:bg-secondary active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .input-prompt {
+    @apply w-full px-4 py-3 rounded-xl bg-white/80 border border-border focus:ring-2 focus:ring-primary/20 focus:border-primary/50 outline-none transition-all;
+  }
+
+  .progress-bar {
+    @apply h-2 bg-primary/10 rounded-full overflow-hidden;
+  }
+  
+  .progress-bar-inner {
+    @apply h-full bg-gradient-to-r from-primary/80 to-primary rounded-full;
+  }
+}
+
+.blurred-backdrop {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Apple-inspired glass morphism */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.glass-morphism:hover {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+}
+
+/* Enhanced background patterns */
+.dot-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
